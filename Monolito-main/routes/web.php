@@ -4,6 +4,13 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\AlunosController;
+
+Route::get('/alunos/create', [AlunosController::class, 'create'])->name('alunos.create');
+Route::post('/alunos', [AlunosController::class, 'store'])->name('alunos.store');
+Route::get('/alunos', [AlunosController::class, 'index'])->name('alunos.index');
+
+Route::get('/alunos', [AlunosController::class, 'index'])->name('alunos.index');
 
 Route::get('invest', function() {
     $lista = \App\Models\User::all();
